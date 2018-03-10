@@ -101,3 +101,7 @@
     -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
     transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
 }
+
+[v-cloak] {
+    display:none;
+}

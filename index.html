@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 </head>
 <body>
-  <div id="app">
+  <div id="app" v-cloak>
     <v-app>
       <transition name="fade">
         <div class="lds-css ng-scope" v-if="starter" transition="fade-transition" align="center" style="padding-top: 15%">
@@ -25,19 +25,26 @@
         </div>
       </transition>
       <transition name="fade">
-      <div align="center" v-if="!loading" transition="fade-transition">
-        <img src="images/yathra2018logo.png" style="max-height: 450px">
-        <img src="images/ticketfan.png" style="max-height: 450px">
+      <div align="center" v-if="!loading" transition="fade-transition" v-cloak>
+          <v-layout row>
+              <v-flex xs12 sm6 offset-sm3>
+                      <img src="images/yathra2018logo.png" style="max-height: 450px">
+                      <img src="images/ticketfan.png" style="max-height: 450px">
+              </v-flex>
+          </v-layout>
       </div>
       </transition>
         <transition name="fade">
-      <div v-if="!loading">
-        <h1 align="center" style="font-family: 'Dancing Script', cursive; color: silver; font-size: 70px"><strong>Ticket Reservations</strong></h1>
-      </div>
+      <div v-if="!loading" v-cloak>
+          <v-layout row>
+              <v-flex xs12 sm6 offset-sm3>
+                  <h1 align="center" style="font-family: 'Dancing Script', cursive; color: silver; font-size: 70px"><strong>Ticket Reservations</strong></h1>
+              </v-flex>
+          </v-layout>
+        </div>
         </transition>
       <transition name="fade">
-      <div align="center" v-if="!loading">
-
+      <div align="center" v-if="!loading" v-cloak>
         <v-btn class="main-buttons fadeInUp"
                style="background: #4d0000; color: silver;" large
                @click.native.stop="bookingDialog = true"
@@ -56,20 +63,34 @@
         <!--Booking Dialog-->
         <v-layout row justify-center>
           <v-dialog v-model="bookingDialog" max-width="80%">
-            <v-card >
-              <iframe style="width: 100%; height: 800px" src="https://goo.gl/forms/QRR8AbUr2E307SUq1"></iframe>
+            <v-card style="overflow-y: hidden;">
+                <div>
+                    <iframe style="width: 100%; height: 800px" src="https://goo.gl/forms/QRR8AbUr2E307SUq1"></iframe>
+                </div>
+                <v-btn style="background: #4d0000;
+              color: silver; border: 2px solid silver;
+              margin: 0px;" block @click.native="bookingDialog = false"><strong>Close</strong></v-btn>
             </v-card>
           </v-dialog>
         </v-layout>
 
         <!--Map Dialog-->
-        <v-layout row justify-center>
-          <v-dialog v-model="seatingDialog" max-width="80%">
-            <v-card>
-              <img src="images/seating.png" style="max-width: 100%; border: 20px solid silver;" >
-              <!--<v-btn style="background: #4d0000;-->
-              <!--color: silver; border: 2px solid silver;-->
-              <!--margin: 0px; font-family: 'Dancing Script', cursive;" block @click.native="seatingDialog = false"><strong>Close</strong></v-btn>-->
+        <v-layout row justify-center >
+          <v-dialog v-model="seatingDialog" max-width="290">
+            <v-card style="overflow-y: hidden;">
+              <!--<img src="images/seating.png" style="max-width: 100%; border: 20px solid silver;" >-->
+                <div align="center" style="background:#4d0000 ; padding:  20px;" >
+                    <h2 style="color: silver">Ticket Prices</h2>
+                    <p style="color: silver">Rs. 350</p>
+                    <p style="color: silver">Rs. 550</p>
+                    <p style="color: silver">Rs. 750</p>
+                    <p style="color: silver">Rs. 950</p>
+                    <p style="color: silver">Rs. 1500</p>
+                    <p style="color: silver">Rs. 2000</p>
+                </div>
+              <v-btn style="background: #4d0000;
+              color: silver; border: 2px solid silver;
+              margin: 0px;" block @click.native="seatingDialog = false"><strong>Close</strong></v-btn>
             </v-card>
           </v-dialog>
         </v-layout>
@@ -77,21 +98,24 @@
         <!--Contact dialog-->
         <v-layout row justify-center>
           <v-dialog v-model="contactDialog" max-width="290">
-            <v-card>
+            <v-card style="overflow-y: hidden;">
               <div align="center" style="background:#4d0000 ; padding:  20px">
+                <!--<div style="padding: 10px">-->
+                  <!--<a style="color: silver" href="https://www.facebook.com/events/214867902314877/" target="_blank"><img src="images/fb.png" alt="images/fb.png" style="height:4em"><br>Official Event Page</a>-->
+                <!--</div>-->
                 <div style="padding: 10px">
-                  <a style="color: silver" href="https://www.facebook.com/events/214867902314877/" target="_blank"><img src="images/fb.png" alt="images/fb.png" style="height:4em"><br>Official Event Page</a>
-                </div>
-                <div style="padding: 10px">
-                  <a style="color: silver" href="https://www.facebook.com/pages/Classical-Music-Society-of-University-Of-Moratuwa/1522434751330156?fref=ts" target="_blank"><img src="images/fb.png" alt="images/fb.png" style="height:4em"><br>Our Society</a>
+                  <a style="color: silver" href="https://www.facebook.com/Classical-Music-Society-of-University-Of-Moratuwa-1522434751330156" target="_blank"><img src="images/fb.png" alt="images/fb.png" style="height:4em"><br>Our Society</a>
                 </div>
                 <div style="padding: 10px">
                   <a style="color: silver" href="https://www.youtube.com/user/cmsuom" target="_blank"><img src="images/youtube.png" alt="images/youtube.png" style="height:4em"><br>Official Youtube Channel</a>
                 </div>
                 <h2 style="color: silver">Contact Us!</h2>
-                <p style="color: silver">Thirasara - 077 7563185</p>
-                <p style="color: silver">Nipuna    - 071 9658731</p>
+                <p style="color: silver">Nisal Gunathilake - 076 6188621</p>
+                <p style="color: silver">Vindula Yasith - 076 8587394</p>
               </div>
+                <v-btn style="background: #4d0000;
+              color: silver; border: 2px solid silver;
+              margin: 0px;" block @click.native="contactDialog = false"><strong>Close</strong></v-btn>
             </v-card>
           </v-dialog>
         </v-layout>
@@ -101,9 +125,13 @@
       <v-footer :fixed="fixed" app class="text-md-center" style="margin: 0%; padding: 0%">
         <span style="text-align: center; width: 100%; color: silver; background: black; height: 100%" >© Classical Music Society - University of Moratuwa</span>
       </v-footer>
-      <div align="center" class="fadeInUp" v-if="!loading">
-        <img src="images/cmslogo.png" style="max-height: 150px; padding-right: 100px">
-        <img src="images/moralogo.png" style="max-height: 150px">
+      <div align="center" class="fadeInUp" v-if="!loading" style="margin-bottom: 50px">
+          <v-layout row>
+              <v-flex xs12 sm6 offset-sm3>
+                  <img src="images/cmslogo.png" style="max-height: 150px; padding-right: 100px">
+                  <img src="images/moralogo.png" style="max-height: 150px">
+              </v-flex>
+          </v-layout>
       </div>
     </v-app>
   </div>
@@ -136,13 +164,15 @@
         }
     })
   </script>
-  <style scoped>
+  <style>
     .fade-enter-active, .fade-leave-active {
       transition: opacity 2s;
     }
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
       opacity: 0;
     }
+
+    [v-cloak] { display:none; }
   </style>
 </body>
 </html>
