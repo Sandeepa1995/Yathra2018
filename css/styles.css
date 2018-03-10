@@ -1,0 +1,103 @@
+#app {
+    background: linear-gradient(313deg, #2b0f0f, #000000, #5f5252, #180909, #5f5252, #000000, #000000);
+    background-size: 600% 600%;
+
+    -webkit-animation: Yathra2018 15s ease infinite;
+    -moz-animation: Yathra2018 15s ease infinite;
+    -o-animation: Yathra2018 15s ease infinite;
+    animation: Yathra2018 15s ease infinite;
+
+}
+
+.main-buttons{
+    border: 2px solid silver;
+    margin: 20px 50px 50px 40px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.main-buttons:hover{
+    background-color: #000;
+    /*  Making button bigger on hover  */
+    transform: scale(1.2) perspective(1px)
+}
+@-webkit-keyframes Yathra2018 {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes Yathra2018 {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes Yathra2018 {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes Yathra2018 {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@keyframes lds-ripple {
+    0% {
+        top: 84px;
+        left: 84px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 12px;
+        left: 12px;
+        width: 144px;
+        height: 144px;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes lds-ripple {
+    0% {
+        top: 84px;
+        left: 84px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 12px;
+        left: 12px;
+        width: 144px;
+        height: 144px;
+        opacity: 0;
+    }
+}
+.lds-ripple {
+    position: relative;
+}
+.lds-ripple div {
+    box-sizing: content-box;
+    position: absolute;
+    border-width: 16px;
+    border-style: solid;
+    opacity: 1;
+    border-radius: 50%;
+    -webkit-animation: lds-ripple 0.8s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    animation: lds-ripple 0.8s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(1) {
+    border-color: #800000;
+}
+.lds-ripple div:nth-child(2) {
+    border-color: #c0c0c0;
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s;
+}
+.lds-ripple {
+    width: 200px !important;
+    height: 200px !important;
+    -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+    transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+}
