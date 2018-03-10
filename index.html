@@ -27,24 +27,30 @@
       <transition name="fade">
       <div align="center" v-if="!loading" transition="fade-transition" v-cloak>
           <v-layout row>
-              <v-flex xs12 sm6 offset-sm3>
-                      <img src="images/yathra2018logo.png" style="max-height: 450px">
-                      <img src="images/ticketfan.png" style="max-height: 450px">
+              <v-flex xs3>
+              </v-flex>
+              <v-flex xs3>
+                  <img src="images/yathra2018logo.png" style="max-height: 450px">
+              </v-flex>
+              <v-flex xs3>
+                  <img src="images/ticketfan.png" style="max-height: 350px">
+                  <h1 align="center" style="font-family: 'Baskerville Old Face', cursive; color: #4d0000; font-size: 50px"><strong>Ticket Reservations</strong></h1>
+              </v-flex>
+              <v-flex xs3>
               </v-flex>
           </v-layout>
       </div>
       </transition>
-        <transition name="fade">
-      <div v-if="!loading" v-cloak>
-          <v-layout row>
-              <v-flex xs12 sm6 offset-sm3>
-                  <h1 align="center" style="font-family: 'Dancing Script', cursive; color: silver; font-size: 70px"><strong>Ticket Reservations</strong></h1>
-              </v-flex>
-          </v-layout>
-        </div>
-        </transition>
+        <!--<transition name="fade">-->
+      <!--<div v-if="!loading" v-cloak>-->
+          <!--<v-layout row>-->
+              <!--<v-flex xs12 sm6 offset-sm3>-->
+              <!--</v-flex>-->
+          <!--</v-layout>-->
+        <!--</div>-->
+        <!--</transition>-->
       <transition name="fade">
-      <div align="center" v-if="!loading" v-cloak>
+      <div align="center" v-if="!loading" v-cloak style="margin-top: 40px">
         <v-btn class="main-buttons fadeInUp"
                style="background: #4d0000; color: silver;" large
                @click.native.stop="bookingDialog = true"
@@ -53,7 +59,7 @@
         <v-btn class="main-buttons fadeInUp"
                style="background: #4d0000; color: silver;" large
                @click.native.stop="seatingDialog = true"
-        ><strong>Prices</strong></v-btn>
+        ><strong>Seating</strong></v-btn>
 
         <v-btn class="main-buttons fadeInUp"
                style="background: #4d0000; color: silver;" large
@@ -76,18 +82,18 @@
 
         <!--Seating Dialog-->
         <v-layout row justify-center >
-          <v-dialog v-model="seatingDialog" max-width="290">
+          <v-dialog v-model="seatingDialog" max-width="600">
             <v-card style="overflow-y: hidden;">
-              <!--<img src="images/seating.png" style="max-width: 100%; border: 20px solid silver;" >-->
-                <div align="center" style="background:#4d0000 ; padding:  20px;" >
-                    <h2 style="color: silver">Ticket Prices</h2>
-                    <p style="color: silver">Rs. 350</p>
-                    <p style="color: silver">Rs. 550</p>
-                    <p style="color: silver">Rs. 750</p>
-                    <p style="color: silver">Rs. 950</p>
-                    <p style="color: silver">Rs. 1500</p>
-                    <p style="color: silver">Rs. 2000</p>
-                </div>
+              <img src="images/hallarrangement.png" style="max-width: 100%; border: 20px solid silver;" >
+                <!--<div align="center" style="background:#4d0000 ; padding:  20px;" >-->
+                    <!--<h2 style="color: silver">Seating</h2>-->
+                    <!--<p style="color: silver">Rs. 350</p>-->
+                    <!--<p style="color: silver">Rs. 550</p>-->
+                    <!--<p style="color: silver">Rs. 750</p>-->
+                    <!--<p style="color: silver">Rs. 950</p>-->
+                    <!--<p style="color: silver">Rs. 1500</p>-->
+                    <!--<p style="color: silver">Rs. 2000</p>-->
+                <!--</div>-->
               <v-btn style="background: #4d0000;
               color: silver; border: 2px solid silver;
               margin: 0px;" block @click.native="seatingDialog = false"><strong>Close</strong></v-btn>
@@ -128,8 +134,8 @@
       <div align="center" class="fadeInUp" v-if="!loading" style="margin-bottom: 50px">
           <v-layout row>
               <v-flex xs12 sm6 offset-sm3>
-                  <img src="images/cmslogo.png" style="max-height: 150px; padding-right: 100px">
-                  <img src="images/moralogo.png" style="max-height: 150px">
+                  <img src="images/cmslogo.png" style="max-height: 45px; padding-right: 100px">
+                  <img src="images/moralogo.png" style="max-height: 45px">
               </v-flex>
           </v-layout>
       </div>

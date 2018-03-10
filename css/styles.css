@@ -1,18 +1,19 @@
 #app {
-    background: linear-gradient(313deg, #2b0f0f, #000000, #5f5252, #180909, #5f5252, #000000, #000000);
+    background-image: url("./../images/background.jpg");
     background-size: 600% 600%;
 
-    -webkit-animation: Yathra2018 15s ease infinite;
-    -moz-animation: Yathra2018 15s ease infinite;
-    -o-animation: Yathra2018 15s ease infinite;
-    animation: Yathra2018 15s ease infinite;
+    -webkit-animation: Yathra2018 100s ease infinite;
+    -moz-animation: Yathra2018 100s ease infinite;
+    -o-animation: Yathra2018 100s ease infinite;
+    animation: Yathra2018 100s ease infinite;
 
 }
 
 .main-buttons{
-    border: 2px solid silver;
+    border: 3px solid silver;
+    border-radius: 5px;
     margin: 20px 50px 50px 40px;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Baskerville Old Face', cursive;
 }
 
 .main-buttons:hover{
