@@ -16,6 +16,7 @@
 <body>
   <div id="app" v-cloak>
     <v-app>
+        <audio src="./music/background.mp3" autoplay="autoplay" loop="loop"></audio>
       <transition name="fade">
         <div class="lds-css ng-scope" v-if="starter" transition="fade-transition" align="center" style="padding-top: 15%">
           <div style="width:100%;height:100%" class="lds-ripple">
@@ -27,16 +28,8 @@
       <transition name="fade">
       <div align="center" v-if="!loading" transition="fade-transition" v-cloak>
           <v-layout row>
-              <v-flex xs3>
-              </v-flex>
-              <v-flex xs3>
-                  <img src="images/yathra2018logo.png" style="max-height: 450px">
-              </v-flex>
-              <v-flex xs3>
-                  <img src="images/ticketfan.png" style="max-height: 350px">
-                  <h1 align="center" style="font-family: 'Baskerville Old Face', cursive; color: #4d0000; font-size: 50px"><strong>Ticket Reservations</strong></h1>
-              </v-flex>
-              <v-flex xs3>
+              <v-flex xs12 sm12>
+                  <img src="images/header.png" style="max-width: 100%; height: auto">
               </v-flex>
           </v-layout>
       </div>
@@ -50,7 +43,7 @@
         <!--</div>-->
         <!--</transition>-->
       <transition name="fade">
-      <div align="center" v-if="!loading" v-cloak style="margin-top: 40px">
+      <div align="center" v-if="!loading" v-cloak>
         <v-btn class="main-buttons fadeInUp"
                style="background: #4d0000; color: silver;" large
                @click.native.stop="bookingDialog = true"
@@ -133,11 +126,17 @@
       </v-footer>
       <div align="center" class="fadeInUp" v-if="!loading" style="margin-bottom: 50px">
           <v-layout row>
-              <v-flex xs12 sm6 offset-sm3>
-                  <img src="images/cmslogo.png" style="max-height: 45px; padding-right: 100px">
-                  <img src="images/moralogo.png" style="max-height: 45px">
+              <v-flex xs12 sm12>
+                  <img src="images/footer.png" style="max-width: 20%; height: auto">
               </v-flex>
           </v-layout>
+
+          <!--<v-layout row>-->
+              <!--<v-flex xs12 sm6 offset-sm3>-->
+                  <!--<img src="images/cmslogo.png" style="max-height: 45px; padding-right: 100px">-->
+                  <!--<img src="images/moralogo.png" style="max-height: 45px">-->
+              <!--</v-flex>-->
+          <!--</v-layout>-->
       </div>
     </v-app>
   </div>
